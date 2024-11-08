@@ -1,0 +1,125 @@
+<rdf:RDF xmlns="http://sportify.org/ontology#"
+     xml:base="http://sportify.org/ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <owl:Ontology rdf:about="http://sportify.org/ontology"/>
+
+    <!-- Classes -->
+    <owl:Class rdf:about="http://sportify.org/ontology#Utilisateur"/>
+    <owl:Class rdf:about="http://sportify.org/ontology#Installation"/>
+    <owl:Class rdf:about="http://sportify.org/ontology#Réservation"/>
+    <owl:Class rdf:about="http://sportify.org/ontology#Paiement"/>
+    <owl:Class rdf:about="http://sportify.org/ontology#Équipement"/>
+
+    <!-- Utilisateur Entity -->
+    <owl:DatatypeProperty rdf:about="http://sportify.org/ontology#emailUtilisateur">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Utilisateur"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    <owl:FunctionalProperty rdf:about="http://sportify.org/ontology#emailUtilisateur"/>
+
+    <owl:DatatypeProperty rdf:about="http://sportify.org/ontology#imageUrlUtilisateur">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Utilisateur"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="http://sportify.org/ontology#aRéservation">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Utilisateur"/>
+        <rdfs:range rdf:resource="http://sportify.org/ontology#Réservation"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://sportify.org/ontology#effectuePaiement">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Utilisateur"/>
+        <rdfs:range rdf:resource="http://sportify.org/ontology#Paiement"/>
+    </owl:ObjectProperty>
+
+    <!-- Installation Entity -->
+    <owl:DatatypeProperty rdf:about="http://sportify.org/ontology#nomInstallation">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Installation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    <owl:FunctionalProperty rdf:about="http://sportify.org/ontology#nomInstallation"/>
+
+    <owl:DatatypeProperty rdf:about="http://sportify.org/ontology#localisationInstallation">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Installation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://sportify.org/ontology#capacitéInstallation">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Installation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://sportify.org/ontology#typeInstallation">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Installation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://sportify.org/ontology#imageUrlInstallation">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Installation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="http://sportify.org/ontology#contientÉquipement">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Installation"/>
+        <rdfs:range rdf:resource="http://sportify.org/ontology#Équipement"/>
+    </owl:ObjectProperty>
+
+    <!-- Réservation Entity -->
+    <owl:DatatypeProperty rdf:about="http://sportify.org/ontology#dateRéservation">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Réservation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://sportify.org/ontology#statutRéservation">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Réservation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="http://sportify.org/ontology#réserveInstallation">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Réservation"/>
+        <rdfs:range rdf:resource="http://sportify.org/ontology#Installation"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://sportify.org/ontology#estPourUtilisateur">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Réservation"/>
+        <rdfs:range rdf:resource="http://sportify.org/ontology#Utilisateur"/>
+    </owl:ObjectProperty>
+
+    <!-- Paiement Entity -->
+    <owl:DatatypeProperty rdf:about="http://sportify.org/ontology#montantPaiement">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Paiement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="http://sportify.org/ontology#pourRéservation">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Paiement"/>
+        <rdfs:range rdf:resource="http://sportify.org/ontology#Réservation"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://sportify.org/ontology#effectuéParUtilisateur">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Paiement"/>
+        <rdfs:range rdf:resource="http://sportify.org/ontology#Utilisateur"/>
+    </owl:ObjectProperty>
+
+    <!-- Équipement Entity -->
+    <owl:DatatypeProperty rdf:about="http://sportify.org/ontology#nomÉquipement">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Équipement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    <owl:FunctionalProperty rdf:about="http://sportify.org/ontology#nomÉquipement"/>
+
+    <owl:DatatypeProperty rdf:about="http://sportify.org/ontology#imageUrlÉquipement">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Équipement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="http://sportify.org/ontology#seTrouveDansInstallation">
+        <rdfs:domain rdf:resource="http://sportify.org/ontology#Équipement"/>
+        <rdfs:range rdf:resource="http://sportify.org/ontology#Installation"/>
+    </owl:ObjectProperty>
+
+</rdf:RDF>
